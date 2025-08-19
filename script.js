@@ -90,6 +90,12 @@ console.log("Total Inventory value BEFORE 15% discount")
 //Apply 15% discount to ALL products in store
 Product.applyDiscount(store.inventory, 0.15);
 
+//Total after 15% discount
+const after = store.getInventoryValue();
+console.log("Total inventory AFTER 15% discount:", after);
+
+
+
 // Test Runs
 /*const testProduct = new Product("Laptop", 1399.99, 5);
 console.log(testProduct.toString(), "Total Value:", testProduct.getTotalValue());
