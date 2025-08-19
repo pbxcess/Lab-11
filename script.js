@@ -57,6 +57,15 @@ class Store {
         }
         this.inventory.push(product);
     }
+
+    getInventoryValue() {
+        return this.inventory.reduce((sum, p) => sum + p.getTotalValue(), 0);
+    }
+
+    findProductByName(name) {
+        const n = String(name).toLowerCase();
+        return this.inventory.find(p => p.name.toLowerCase() === n) || null;
+    }
 }
 
 // Test Runs
