@@ -13,4 +13,8 @@ class Product {
     toString() {
         return `Product: ${this.name}, Price: $${this.price.toFixed(2)}, Quantity: ${this.quantity}`;
     }
+
 }
+
+const testProduct = new Product("Laptop", 1399.99, 5);
+console.log(testProduct.toString(), "Total Value:", testProduct.getTotalValue());
