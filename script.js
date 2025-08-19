@@ -27,6 +27,11 @@ class PerishableProduct extends Product {
     }
 
     toString() {
-        return `Product: ${this.name}, Price: $${this.price.toFixed(2),}, Quantity: ${this.quantity}, Expiration Date: ${this.expirationDate}`;
+        return `Product: ${this.name}, Price: $${this.price.toFixed(2)}, Quantity: ${this.quantity}, Expiration Date: ${this.expirationDate}`;
     }
 }
+
+const milk = new PerishableProduct("Milk", 5.69, 30, "2025-09-18");
+const bread = new PerishableProduct("Bread", 2.99, 40, "2025-08-30");
+console.log(milk.toString());
+console.log(bread.toString());
