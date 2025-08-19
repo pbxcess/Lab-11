@@ -79,13 +79,11 @@ const p5 = new Product("AAA Batteries (12-pack)", 12.99, 54);
 
 for (const p of [p1, p2, p3, p4, p5]) store.addProduct(p);
 
-console.log("Initial inventory value:", store.getInventoryValue());
-console.log("Find 'Milk':", store.findProductByName("Milk")?.toString());
 
 //Part 5 -- Test Outputs
 //The total before 15% discount
 const before = store.getInventoryValue();
-console.log("Total Inventory value BEFORE 15% discount")
+console.log("Total inventory value BEFORE 15% discount")
 
 //Apply 15% discount to ALL products in store
 Product.applyDiscount(store.inventory, 0.15);
@@ -94,6 +92,9 @@ Product.applyDiscount(store.inventory, 0.15);
 const after = store.getInventoryValue();
 console.log("Total inventory AFTER 15% discount:", after);
 
+//Find % print a specific product by name
+const found = store.findProductByName("Milk");
+console.log("Find 'Milk':", store.findProductByName("Milk")?.toString());
 
 
 // Test Runs
