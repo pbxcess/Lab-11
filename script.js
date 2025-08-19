@@ -14,6 +14,7 @@ class Product {
         return `Product: ${this.name}, Price: $${this.price.toFixed(2)}, Quantity: ${this.quantity}`;
     }
 
+    //Part 3
     static applyDiscount(products, discount) {
         if (!Array.isArray(products)) {
             throw new TypeError("products must be an array");
@@ -43,6 +44,13 @@ class PerishableProduct extends Product {
     }
 }
 
+
+//Part 4 - Store mngmnt
+class Stor {
+    constructor() {
+        this.inventory = [];
+    }
+}
 // Test Runs
 
 const testProduct = new Product("Laptop", 1399.99, 5);
