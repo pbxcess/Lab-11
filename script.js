@@ -68,6 +68,21 @@ class Store {
     }
 }
 
+
+//store and seed products
+const store = new Store();
+const p1 = new Product("Laptop", 1399.99, 5);
+const p2 = new Product("Headphones", 149.99, 20);
+const p3 = new PerishableProduct("Milk", 5.69, 30, "2025-09-18");
+const p4 = new PerishableProduct("Bread", 2.99, 40, "2025-08-30");
+const p5 = new Product("AAA Batteries (12-pack", 12.99, 54);
+
+for (const p of [p1, p2, p3, p4, p5]) store.addProduct(p);
+
+console.log("Initial inventory value:", store.getInventoryValue());
+console.log("Find 'Milk':", store.findProductByName("Milk")?.toString());
+
+
 // Test Runs
 
 const testProduct = new Product("Laptop", 1399.99, 5);
@@ -82,5 +97,5 @@ console.log(bread.toString());
 const headphones = new Product("Headphones", 149.99, 20);
 const sampleArr = [testProduct, milk, headphones];
 console.log("Before discount:", sampleArr.map(p => p.price));
-Product.applyDiscount(sampleArr, 0.1);
-console.log("After 10% discount:", sampleArr.map(p => p.price));
+Product.applyDiscount(sampleArr, 0.18);
+console.log("After 18% discount:", sampleArr.map(p => p.price));
