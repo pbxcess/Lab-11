@@ -18,3 +18,11 @@ class Product {
 
 const testProduct = new Product("Laptop", 1399.99, 5);
 console.log(testProduct.toString(), "Total Value:", testProduct.getTotalValue());
+
+//Part 2:
+class PerishableProduct extends Product {
+    constructor(name, price, quantity, expirationDate) {
+        super(name, price, quantity);
+        this.expirationDate = String(expirationDate);
+    }
+}
