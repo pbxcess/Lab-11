@@ -46,11 +46,19 @@ class PerishableProduct extends Product {
 
 
 //Part 4 - Store mngmnt
-class Stor {
+class Store {
     constructor() {
         this.inventory = [];
     }
+
+    addProduct(product) {
+        if (!(product instanceof Product)) {
+            throw new TypeError("Only Product or PerishableProduct can be added");
+        }
+        this.inventory.push(product);
+    }
 }
+
 // Test Runs
 
 const testProduct = new Product("Laptop", 1399.99, 5);
