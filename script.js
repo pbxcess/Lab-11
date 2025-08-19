@@ -92,13 +92,13 @@ Product.applyDiscount(store.inventory, 0.15);
 const after = store.getInventoryValue();
 console.log("Total inventory AFTER 15% discount:", after);
 
-//Find % print a specific product by name
+//Find & print a specific product by name
 const found = store.findProductByName("Milk");
-console.log("Find 'Milk':", store.findProductByName("Milk")?.toString());
+console.log("Find 'Milk':", found ? found.toString() : "Not found");
 
-
+console.log("Below are test runs from parts 1-4")
 // Test Runs
-/*const testProduct = new Product("Laptop", 1399.99, 5);
+const testProduct = new Product("Laptop", 1399.99, 5);
 console.log(testProduct.toString(), "Total Value:", testProduct.getTotalValue());
 
 
@@ -111,5 +111,5 @@ const headphones = new Product("Headphones", 149.99, 20);
 const sampleArr = [testProduct, milk, headphones];
 console.log("Before discount:", sampleArr.map(p => p.price));
 Product.applyDiscount(sampleArr, 0.18);
-console.log("After 18% discount:", sampleArr.map(p => p.price));*/
+console.log("After 18% discount:", sampleArr.map(p => p.price));
 
