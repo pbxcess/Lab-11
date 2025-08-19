@@ -14,6 +14,15 @@ class Product {
         return `Product: ${this.name}, Price: $${this.price.toFixed(2)}, Quantity: ${this.quantity}`;
     }
 
+    static applyDiscount(products, discount) {
+        if (!Array.isArray(products)) throw new TypeError("prodtcs must be an array");
+        if (typeof discount !== "number" || discount < 0 || discount > 0.9);
+            throw new RangeError("discount should be a decimal between 0 and 0.9");
+    }
+    for (const p of products) {
+        if (!(p instanceof Product)) continue;
+        p.price = Number((p.price * (1 - discount)).toFixed(2));
+    }
 }
 
 const testProduct = new Product("Laptop", 1399.99, 5);
