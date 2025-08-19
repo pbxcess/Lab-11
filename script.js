@@ -1,4 +1,5 @@
 //Part 1
+//Base Class and methods
 class Product {
     constructor(name, price, quantity) {
         this.name = String(name);
@@ -14,7 +15,8 @@ class Product {
         return `Product: ${this.name}, Price: $${this.price.toFixed(2)}, Quantity: ${this.quantity}`;
     }
 
-    //Part 3
+    //Part 3 
+    //Added static method applyDiscount
     static applyDiscount(products, discount) {
         if (!Array.isArray(products)) {
             throw new TypeError("products must be an array");
@@ -33,6 +35,7 @@ class Product {
 
 
 //Part 2:
+//Perishable Product extending products (a subclass) that inherits all properties from Product and adds the expiration date
 class PerishableProduct extends Product {
     constructor(name, price, quantity, expirationDate) {
         super(name, price, quantity);
@@ -46,6 +49,7 @@ class PerishableProduct extends Product {
 
 
 //Part 4 - Store mngmnt
+//Store class to add product, get inventory, and find product
 class Store {
     constructor() {
         this.inventory = [];
@@ -79,6 +83,13 @@ const p5 = new Product("AAA Batteries (12-pack)", 12.99, 54);
 
 for (const p of [p1, p2, p3, p4, p5]) store.addProduct(p);
 
+//Log products to console
+console.log("Created products:");
+console.log(p1.toString());
+console.log(p2.toString());
+console.log(p3.toString());
+console.log(p4.toString());
+console.log(p5.toString());
 
 //Part 5 -- Test Outputs
 //The total before 15% discount
