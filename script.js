@@ -25,4 +25,8 @@ class PerishableProduct extends Product {
         super(name, price, quantity);
         this.expirationDate = String(expirationDate);
     }
+
+    toString() {
+        return `Product: ${this.name}, Price: $${this.price.toFixed(2),}, Quantity: ${this.quantity}, Expiration Date: ${this.expirationDate}`;
+    }
 }
